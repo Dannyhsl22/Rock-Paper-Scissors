@@ -10,7 +10,16 @@ const scissors_div = document.getElementById("scissors");
 const lizard_div = document.getElementById("lizard");
 const spock_div = document.getElementById("spock");
 
+function getComputererChoice() {
+    const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    const randomNumber = (Math.floor(Math.random() * 5));
+    return choices[randomNumber];
+}
+console.log(getComputererChoice());
 
+function game(userChoice) {
+
+}
 
 function main(){
     rock_div.addEventListener('click', function() {
