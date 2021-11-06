@@ -6,6 +6,36 @@ const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
+const scissors_div = document.getElementById("scissors");
 const lizard_div = document.getElementById("lizard");
 const spock_div = document.getElementById("spock");
+
+
+
+function main(){
+    rock_div.addEventListener('click', function() {
+        console.log("YOU CLIKCED ON ROCK");
+        game("rock");
+    })
+
+    paper_div.addEventListener('click', function() {
+        console.log("YOU CLIKCED ON PAPER");
+        game("paper");
+    })
+    scissors_div.addEventListener('click', function() {
+        console.log("YOU CLIKCED ON SCISSORS");
+        game("scissors");
+    })
+
+    lizard_div.addEventListener('click', function() {
+        console.log("YOU CLIKCED ON LIZARD");
+        game("lizard");
+    })
+
+    spock_div.addEventListener('click', function() {
+        console.log("YOU CLIKCED ON SPOCK");
+        game("spock");
+    })
+}
+
+main();
