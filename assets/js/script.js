@@ -1,9 +1,9 @@
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
@@ -16,6 +16,29 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
+function win(userChoice, computerChoice) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = userChoice + " beats " + computerChoice + ". You Win!🔥"
+    document.getElementById(userChoice).classList.add('blue-glow');
+    setTimeout(function() { document.getElementById(userChoice).classList.remove('blue-glow') }, 500);
+}
+function lose(userChoice, computerChoice) {
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = userChoice + " loses " + computerChoice + ". You Lost!😒"
+    document.getElementById(userChoice).classList.add('red-glow');
+    setTimeout(function() { document.getElementById(userChoice).classList.remove('red-glow') }, 500);
+}
+function tie(userChoice, computerChoice) {  
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = userChoice + " equals " + computerChoice + ". It's a Tie!😐"
+    document.getElementById(userChoice).classList.add('grey-glow');
+    setTimeout(function() { document.getElementById(userChoice).classList.remove('grey-glow') }, 500);
+}
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
@@ -30,8 +53,9 @@ switch (userChoice + computerChoice) {
     case "lizardpaper":
     case "spockscissors":
     case "spockrock":
-    console.log("USER WINS!.");
+    win(userChoice, computerChoice);
     break;
+
     case "scissorsrock":
     case "lizardrock":
     case "paperscissors":
@@ -42,14 +66,15 @@ switch (userChoice + computerChoice) {
     case "paperlizard":
     case "scissorsspock":
     case "rockspock":
-    console.log("USER LOSES!.")
+    lose(userChoice, computerChoice);
     break;
+
     case "rockrock":
     case "paperpaper":
     case "scissorsscissors":
     case "lizardlizard":
     case "spockspock":
-    console.log("IT IS A TIE!.")
+    tie(userChoice, computerChoice);
     break;
 }
 }
