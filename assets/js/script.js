@@ -10,6 +10,60 @@ const scissors_div = document.getElementById("scissors");
 const lizard_div = document.getElementById("lizard");
 const spock_div = document.getElementById("spock");
 
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("open");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+};
+
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+const timer = document.getElementById('timer');
+let timerInterval;
+
+function startTimer() {
+   resetScores();
+   clearInterval(timerInterval);
+   let second = 0;
+   let minute = 0;
+   let hour = 0;
+
+   timerInterval = setInterval(function() {
+      timer.innerHTML = 
+        (hour ? hour + ':' : '') +
+        (minute < 10 ? '0' + minute : minute) +
+        ':' +
+        (second < 10 ? '0' + second : second);
+        second++;
+        if (second == 60) {
+           minute++;
+           second = 0;
+        }
+        if (minute == 60) {
+           hour++;
+           minute = 0;
+        }
+   }, 1000);
+}
+
+function stopTimer() {
+   clearInterval(timerInterval);
+}
+
+function resetScores() {
+   document.getElementById('user-score').innerText = 0;  
+   document.getElementById('computer-score').innerText = 0;
+}
+
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     const randomNumber = (Math.floor(Math.random() * 5));
@@ -20,7 +74,7 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " beats " + computerChoice + ". You Win!🔥"
+    result_p.innerHTML = userChoice + " beats " + computerChoice + '<br/>'+ "You Win !🔥"
     document.getElementById(userChoice).classList.add('blue-glow');
     setTimeout(function() { document.getElementById(userChoice).classList.remove('blue-glow') }, 500);
 }
@@ -28,14 +82,14 @@ function lose(userChoice, computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " loses " + computerChoice + ". You Lost!😒"
+    result_p.innerHTML = userChoice + " loses " + computerChoice + '<br/>'+ "You Lost!😒"
     document.getElementById(userChoice).classList.add('red-glow');
     setTimeout(function() { document.getElementById(userChoice).classList.remove('red-glow') }, 500);
 }
 function tie(userChoice, computerChoice) {  
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " equals " + computerChoice + ". It's a Tie!😐"
+    result_p.innerHTML = userChoice + " equals " + computerChoice + '<br/>'+ "It's a Tie!😐"
     document.getElementById(userChoice).classList.add('grey-glow');
     setTimeout(function() { document.getElementById(userChoice).classList.remove('grey-glow') }, 500);
 }

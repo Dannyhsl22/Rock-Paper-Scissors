@@ -6,11 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Rock Paper Scissors Lizard Spock</title>
 </head>
 <body>
 <header>
     <h1>Rock Paper Scissors Lizard Spock</h1>
+    
+    <div class="modal-area">
+        <div> 
+            <button id="open">How to play</button>
+        </div>
+       
+        <div id="myModal" class="modal"> 
+            <div class="modal-header">
+                <span class="close">&times;</span> 
+                <h3>How to Play</h3>
+            </div>
+           
+            <div class="modal-content">   
+                
+                <h4>Rules</h4>
+                <p><i class="far fa-hand-rock"></i> Rock crushes Scissors<i class="far fa-hand-scissors"></i></p>
+                <p><i class="far fa-hand-rock"></i> Rock crushes Lizard<i class="far fa-hand-lizard"></i></p>
+                <p><i class="far fa-hand-paper"></i> Paper beats Rock <i class="far fa-hand-rock"></i></p> 
+                <p><i class="far fa-hand-paper"></i> Paper disproves Spock<i class="far fa-hand-spock"></i></p>
+                <p><i class="far fa-hand-scissors"></i> Scissors beats Paper <i class="far fa-hand-paper"></i></p>
+                <p><i class="far fa-hand-scissors"></i> Scissors decapitates Lizard <i class="far fa-hand-lizard"></i></p> 
+                <p><i class="far fa-hand-lizard"></i> Lizard poisons Spock<i class="far fa-hand-spock"></i></p>
+                <p><i class="far fa-hand-lizard"></i> Lizard eats Paper<i class="far fa-hand-paper"></i></p> 
+                <p><i class="far fa-hand-spock"></i> Spock vaporizes Rock <i class="far fa-hand-rock"></i></p>
+                <p><i class="far fa-hand-spock"></i> Spock smashes Scissors<i class="far fa-hand-scissors"></i></p> 
+            
+            </div>
+        </div>
+    </div>
 </header>    
 
 <div class="score-board">
@@ -20,7 +50,11 @@
 </div>
 
 <div class="result">
-<p>Paper Covers Rock. You Win!</p>
+    <div id="messages">
+        
+        <p>Time taken: <span id="timer">00:00</span></p>
+    </div>
+<p id="action-message">Ready? <br>Choose Your Move. </p>
 </div>
 
 <div class="choices">
@@ -42,7 +76,14 @@
     </div>
 </div>
 
-<p id="action-message">Choose Your Move</p>
+
+
+<div class="button-container">
+    <h4>Set the timer and see how quickly can you beat the computer.</h4>
+    <button onclick="startTimer()" class="timer-button">Start timer</button>
+    <button onclick="resetScores()" class="reset-button">Reset scores</button>
+</div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
