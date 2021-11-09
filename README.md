@@ -6,9 +6,9 @@ It is mentioned again in "The Rothman Disintegration", where Sheldon explains th
 
 The game was originally created by Sam Kass with Karen Bryla. According to an interview with Kass, the series producers did not originally ask for permission to use the game, but Kass was officially referenced by Sheldon as the creator of the game during the "The Rothman Disintegration", after which he states, "Hail Sam Kass!" to which Leonard, Howard, Raj, and Sheldon all then chant "Hail!" while raising their hands.
 
-![Am i responsive](/workspace/Rock-Paper-Scissors-Lizard-Spock/media/mockup.png)
+![Am i responsive](media/mockup.png)
 
-[View the live project here](https://dannyhsl22.github.io/Rock-Paper-Scissors/)
+[View the live project here](https://dannyhsl22.github.io/Rock-Paper-Scissors-Lizard-Spock/)
 
 ## UX
 ### User Stories
