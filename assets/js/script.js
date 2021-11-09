@@ -2,7 +2,6 @@ let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
-const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
@@ -31,7 +30,6 @@ const timer = document.getElementById('timer');
 let timerInterval;
 
 function startTimer() {
-   resetScores();
    clearInterval(timerInterval);
    let second = 0;
    let minute = 0;
@@ -58,11 +56,10 @@ function startTimer() {
 function stopTimer() {
    clearInterval(timerInterval);
 }
-
 function resetScores() {
-   document.getElementById('user-score').innerText = 0;  
-   document.getElementById('computer-score').innerText = 0;
-}
+    document.getElementById('user-score').innerText = 0;  
+    document.getElementById('computer-score').innerText = 0;
+ }
 
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
@@ -74,24 +71,24 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " beats " + computerChoice + '<br/>' + "You Win !🔥"
+    result_p.innerHTML = userChoice + " beats " + computerChoice + '<br/>' + "You Win !🔥";
     document.getElementById(userChoice).classList.add('blue-glow');
-    setTimeout(function() { document.getElementById(userChoice).classList.remove('blue-glow') }, 500);
+    setTimeout(function() { document.getElementById(userChoice).classList.remove('blue-glow'); }, 500);
 }
 function lose(userChoice, computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " loses " + computerChoice + '<br/>'+ "You Lost !😒"
+    result_p.innerHTML = userChoice + " loses " + computerChoice + '<br/>'+ "You Lost !😒";
     document.getElementById(userChoice).classList.add('red-glow');
-    setTimeout(function() { document.getElementById(userChoice).classList.remove('red-glow') }, 500);
+    setTimeout(function() { document.getElementById(userChoice).classList.remove('red-glow'); }, 500);
 }
 function tie(userChoice, computerChoice) {  
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " equals " + computerChoice + '<br/>'+ "It's a Tie !😐"
+    result_p.innerHTML = userChoice + " equals " + computerChoice + '<br/>'+ "It's a Tie !😐";
     document.getElementById(userChoice).classList.add('grey-glow');
-    setTimeout(function() { document.getElementById(userChoice).classList.remove('grey-glow') }, 500);
+    setTimeout(function() { document.getElementById(userChoice).classList.remove('grey-glow'); }, 500);
 }
 
 function game(userChoice) {
@@ -138,26 +135,26 @@ function main(){
     rock_div.addEventListener('click', function() {
         console.log("YOU CLIKCED ON ROCK");
         game("rock");
-    })
+    });
 
     paper_div.addEventListener('click', function() {
         console.log("YOU CLIKCED ON PAPER");
         game("paper");
-    })
+    });
     scissors_div.addEventListener('click', function() {
         console.log("YOU CLIKCED ON SCISSORS");
         game("scissors");
-    })
+    });
 
     lizard_div.addEventListener('click', function() {
         console.log("YOU CLIKCED ON LIZARD");
         game("lizard");
-    })
+    });
 
     spock_div.addEventListener('click', function() {
         console.log("YOU CLIKCED ON SPOCK");
         game("spock");
-    })
+    });
 }
 
 main();
