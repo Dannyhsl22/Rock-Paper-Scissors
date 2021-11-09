@@ -79,26 +79,26 @@ I wanted the game to be eye catching and fun with instructions of how to play th
 ### Skeleton
 The wireframes were created using wireframepro.
 
-![image]()
+![image](media/desktop-wireframe.png)
 
 
-![image]()
+![image](media/desktop-and-rules.png)
 
 
 ### Surface
 #### Images
 The main rock paper scissors (rps) image was found on https://www.pinterest.com/ and I cropped the image down to get the individual images for rock, paper and scissors. 
 
-![image]()
+![image](assets/images/rock.jpg)
 
 
-![image]()
+![image](assets/images/paper.png)
 
-![image]()
+![image](assets/images/scissors.png)
 
-![image]()
+![image](assets/images/lizard.jpg)
 
-![image]()
+![image](assets/images/spock.jpg)
 
 
 I also used an image resizer to get the images to the same size. https://www.iloveimg.com/
@@ -122,12 +122,17 @@ I decided to use “Play” and “San-serif” for the main body text. These we
 ### Header
 * Featured at the top of the page shows the game name: Rock Paper Scissors Lizard Spock in a font that is clearly contrasts with the background.
 
-![image]()
+![image](media/logo.png)
+
+### Body
+* Featured at the middle of the page showing the how to play button , score board, timer, game controls : Rock Paper Scissors Lizard Spock, and timer button
+
+![image](media/body.png)
 
 ### Controls
-* Three buttons displaying the options of either rock, paper ,scissors, lizard and spock.
+* Five buttons displaying the options of either rock, paper ,scissors, lizard and spock.
 
-![image]()
+![image](media/button-choice.png)
 
 
 ### Game Results
@@ -139,13 +144,13 @@ I decided to use “Play” and “San-serif” for the main body text. These we
 
 * The results and score are clear to the user, making the game easy to play, understand who won, and what the score is.
 
-![image]()
+![image](media/score-board.png)
 
 ### Time taken
 * The time taken to beat the computer is shown here if the user has been using the timer.
 
 
-![image]()
+![image](media/timer.png)
 
 ### Player area
 * Your choice: will display the users chosen option of either rock, paper, scissors, lizard or spock.
@@ -154,21 +159,16 @@ I decided to use “Play” and “San-serif” for the main body text. These we
 
 * Your score: will increment by 1 when the user has won the game.
 
-![image]()
+* A short message that shows your choice and if you won, lost, or it is a tie.
 
 
-### Computer area
-* Computer choice: will display the computers chosen option of either rock, paper or scissors, lizard or spock.
-
-* Computer score: will increment by 1 when the computer has won the game.
-
-![image]()
+![image](media/result.png)
 
 
 ### Start timer – button
-* Button which will start the timer once it has been clicked
+* Button which will start the timer once it has been clicked, and a message on top that says "Set the timer and see how quickly can you beat the computer."
 
-![image]()
+![image](media/timer-button.png)
 
 
 
@@ -179,11 +179,11 @@ I decided to use “Play” and “San-serif” for the main body text. These we
 
 * How quickly can you beat the computer explains that you can use the timer option if you want to see how quickly you can win.
 
-![image]()
+![image](media/rules.png)
 
 
 ## Future Enhancements
-* Game Modes - options to select how many rounds you would like to play like best of 5 rounds
+* Game Modes - options to select how many rounds you would like to play like best of 5 or 10 rounds
 
 * Difficulty - options to select the difficulty levels
 
@@ -209,22 +209,22 @@ I have tested this game in Google Chrome, Mozilla Firefox, Safari and Microsoft 
 ### Validator Testing
 * W3C Markup Validation
 
-![html validator]()
+![html validator](media/html-validator.png)
 
 
 * W3C CSS Validation
 
-![css validator]()
+![css validator](media/css-validator.png)
 
 
 * JS
 
-![js validator]()
+![js validator](media/javascript-validator.png)
 
 
 * Lighthouse
 
-![lighthouse results]()
+![lighthouse results](media/lighthouse.png)
 
 
 ## Deployment
